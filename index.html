@@ -6,13 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auroras</title>
     <link rel="stylesheet" href="css/main.css">
+  
 </head>
 <body>
-    <canvas id="myCanvas"></canvas>
-    <canvas id="myCanvas2"></canvas>
-    <canvas id="myCanvas3"></canvas>
+    <div class="col canvas-col" id="cnv_col">
+        <canvas id="myCanvas"></canvas>
+        <canvas id="myCanvas2"></canvas>
+        <canvas id="myCanvas3"></canvas>
+    </div>
+    <div class="col content-col flex-container" id="cnt_col">
+        <div class="inner-element">
+            <br><br>
+            <h1>Auroras</h1>
+            <br><br>
+            <button id="generateBtn">Generate an aurora</button>
+            <br><br>
+            <br>
+            <h4>Status</h4>
+            <br>
+            <span class="info" id="notify">Wait </span>
+        </div>
+    </div>
+
 </body>
 </html>
+
+<!-- editting the html -->
+<script src="js/index/index.js"></script>
+
 <!-- external library -->
 <script src="js/libs/perlin.js"></script>
 <!-- my local library -->
@@ -23,3 +44,6 @@
 <script src="js/main.js"></script>
 <!-- execute everything -->
 <script src="js/exec.js"></script>
+
+
+    

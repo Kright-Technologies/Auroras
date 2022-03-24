@@ -1,10 +1,13 @@
+*{margin: 0px;}
 
 canvas {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
+    width: 727px;
+    height: 969px;
 }
 
 #myCanvas {
@@ -18,3 +21,112 @@ canvas {
 #myCanvas3 {
     z-index: 2;
 }
+
+
+.col {
+    position: absolute;
+    height: 969px;
+    float: left;
+}
+
+.canvas-col{
+    width: 727px;
+}
+
+.content-col{
+    left: 727px;
+    /* width: 727px; */
+    height: 969px;
+    background: #1e1e1e;
+}
+
+.flex-container{
+    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+    
+    justify-content: center;
+    align-items: center;
+    
+    width: 400px;
+    height: 200px;
+  }
+  
+  .inner-element{
+    width: 300px;
+    height: 300px;
+    
+    /* custom */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    
+  }
+
+  h1, h4 {
+    color: #ccc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    width: 100%;
+  }
+
+  #generateBtn {
+    display: inline-block;
+    padding: .9rem 1.5rem 1.1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--color-canvas-default);
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    user-select: none;
+    background-color: #2ea44f;
+    width: 100%;
+    color: #fff;
+    border: 0;
+    border-radius: .375rem;
+    transition: box-shadow .2s;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    cursor: pointer;
+  }
+
+  #generateBtn:hover {
+      background-color: #207d3a;
+  }
+
+
+  /* notifications */
+  /* The alert message box */
+  #notify {
+    padding: 10px;
+    color: white;
+    margin-bottom: 15px;
+    display: block;
+  }
+  .alert{
+    background-color: #04AA6D; /* Red */
+  }
+  .info{
+      background-color: #2196F3; /* Blue */
+  }
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  }

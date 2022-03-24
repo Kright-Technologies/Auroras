@@ -12,6 +12,9 @@ let timeout = 1500;
 timeout = rand(1500, 10000)
 let main_timeout = 2000;
 
+// notify
+notify.innerText = "Wait " + floor((main_timeout + timeout) / 1000) + " seconds for aurora to generate."
+
 
 // timeout = 0
 // stop = true; 
@@ -45,7 +48,13 @@ setTimeout(() => {
 // timeout to stop main
 setTimeout(() => {
     stop = true;
-    debug();
+    // debug();
+
+    // notify
+    notify.classList.remove("info");
+    notify.classList.add("alert");
+    notify.innerText = "Finished generating."
+
 }, main_timeout + timeout);
 
 function debug(){

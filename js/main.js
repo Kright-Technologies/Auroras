@@ -11,12 +11,12 @@ const ctx3 = canvas3.getContext("2d");
 
 
 // for github pages preview
-let window_width = 727
-let window_height = 969
+let window_height = can_res_height
+let window_width = window_height * 3 / 4;
 
 
 // first canvas
-canvas.width = window.innerWidth * 1;
+canvas.width = window_width * 1;
 canvas.height = canvas.width * 4/3;
 
 // second canvas
@@ -30,6 +30,24 @@ canvas3.height = canvas.height;
 let width = canvas.width;
 let height = canvas.height;
 
+class ColorScheme {
+    constructor () {
+        this.colorschemes = [
+            ["#000000", "#030F33", "#02234D", "#003366"],
+            ["#3CBCC7", "#1C96BA", "#0C73B2", "#094C93"],
+            ['#1a1a1a', '#1d1d1d'],
+            ["#17472E", "#09321E", "#002914"],
+            ["#172347", "#025385", "#0EF3C5", "#04E2B7", "#038298", "#015268"],
+            ["#1974D2", "#1357BE", "#0D3AA9", "#061D95", "#000080"]
+        ]    
+    }
+
+    getColors(){
+        return this.colorschemes[floor(rand(0, this.colorschemes.length))];
+    }
+
+}
+
 
 // some other global variables
 let agents = []
@@ -41,13 +59,7 @@ colorScheme = ["#FF7F01", "#F66809", "#EC5012", "#E3391A", "#D92122"];
 colorScheme = ["#3CBCC7", "#1C96BA", "#0C73B2", "#094C93"];
 
 
-bgColorScheme = ["#000000", "#030F33", "#02234D", "#003366"];
-bgColorScheme = ["#3CBCC7", "#1C96BA", "#0C73B2", "#094C93"];
-bgColorScheme =  ["#FF7F01", "#F66809", "#EC5012", "#E3391A", "#D92122"];
-bgColorScheme = ['#1a1a1a', '#1d1d1d']
-bgColorScheme = ["#1974D2", "#1357BE", "#0D3AA9", "#061D95", "#000080"];
-bgColorScheme = ["#17472E", "#09321E", "#002914"]
-bgColorScheme = ["#172347", "#025385", "#0EF3C5", "#04E2B7", "#038298", "#015268"]
+bgColorScheme = new ColorScheme()
 // bgColorScheme = ["#CC3BA1", "#F06AB6", "#FFA6D8", "#BD7DD1", "#4B4896"];
 // bgColorScheme = ["#F19E9A", "#FABAAB", "#F8D7C8", "#7DD0D6", "#4DBFDC", "#2CA1C6"];
 // bgColorScheme =  ["#FF007E", "#DD077F", "#BB0E80", "#981580", "#761C81", "#542382"];
@@ -81,7 +93,7 @@ function generateStars(n){
 function setup() {
     // background
     // drawBg("black")
-    gradientFromColorScheme('vertical', false, bgColorScheme)
+    gradientFromColorScheme('vertical', false, bgColorScheme.getColors())
 
     // create stars all over the canvas
     generateStars(500);
