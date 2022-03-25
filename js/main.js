@@ -171,14 +171,17 @@ function landscapeCallback(ctx2){
 
 
 
-    if (mountains) {
+    // if (mountains) {
+    if (rand(0, 1) > 0.5) {
         // the mountains
         ctx2.beginPath();
         ctx2.moveTo(x, y);    
         
-        for (let i = x; i < 250; ++i) {
+        for (let i = x; i < width; ++i) {
             // the mountains
             ctx2.lineTo(x, y)
+            x += (size * rand(0, 1.5));
+            y -= Math.cos(y * 50) * Math.random() * rand(0, 70);
         }
 
         // the mountains
