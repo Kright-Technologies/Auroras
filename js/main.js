@@ -174,6 +174,7 @@ function landscapeCallback(ctx2){
     // if (mountains) {
     if (rand(0, 1) > 0.5) {
         // the mountains
+        ctx2.filter = "blur(0.5px)";
         ctx2.beginPath();
         ctx2.moveTo(x, y);    
         
